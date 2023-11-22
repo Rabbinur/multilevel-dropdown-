@@ -130,6 +130,7 @@ const Headers = () => {
         {Menu.map((item, i) => {
           return (
             <CreateMenu
+              key={i}
               item={item}
               depth={0}
               menuStatus={menuStatus}
@@ -171,7 +172,7 @@ const CreateMenu = ({ item, depth, menuStatus, setMenuStatus, myref }) => {
             depth == 0 ? "top-12 left-0" : "left-0 top-0 ml-[calc(100%)]"
           } absolute`}
         >
-          {item.submenu.map((subitem) => {
+          {item.submenu.map((subitem, i) => {
             return (
               <CreateMenu
                 key={subitem.id}
